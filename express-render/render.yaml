@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: radio-server
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: MAX_PIPELINES
+        value: 2

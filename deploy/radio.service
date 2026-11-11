@@ -1,0 +1,17 @@
+# /etc/systemd/system/radio.service   (path / user apne hisaab se badlo)
+[Unit]
+Description=ESP32 Internet Radio Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=suvaranjan
+WorkingDirectory=/home/suvaranjan/radio-server
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
