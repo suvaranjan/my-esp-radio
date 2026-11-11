@@ -1,0 +1,16 @@
+name: Render 24/7 Keep Alive
+
+on:
+  schedule:
+    # Har 12 minute mein trigger hoga (Render 15 min me sleep hota hai)
+    - cron: '*/12 * * * *'
+  workflow_dispatch: # GitHub UI se manual test karne ke liye
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Radio Server
+        run: |
+          echo "Pinging https://my-esp-radio.onrender.com/health ..."
+          curl -s -f -m 30 https://my-esp-radio.onrender.com/health || echo "Server waking up..."
