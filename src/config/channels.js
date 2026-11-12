@@ -105,6 +105,13 @@ module.exports = [
     genre: "General",
     sources: [{ type: "iptv", channelId: "RepublicTV.in" }],
   },
+  {
+    slug: "radio-choklate",
+    name: "Radio Choklate 104 FM",
+    language: "or",
+    genre: "Music",
+    sources: [{ type: "hls", url: "https://stream.zeno.fm/1t5ceyhcxbruv" }],
+  },
 
   // ---- Example: teeno sources ek saath (YouTube -> IPTV -> pinned) ----
   // { slug: 'example', name: 'Example', language: 'or', alwaysOn: false, enabled: false,
